@@ -337,6 +337,24 @@ function getMarkGroup(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix:
           }
         : {})
     }
+    // TODO: if having label encoding -> add a text mark here + label-transform
+    ...(
+      model.encoding.label
+        ? {
+          name: model.getName('marks_label'),
+          type: markCompiler['text'].vgMark,
+          from: {data: model.getName('marks')},
+          encode: {
+
+          },
+          transform: [
+            {
+              // label here
+            }
+          ]
+        }
+        : {/* empty */}
+    )
   ];
 }
 

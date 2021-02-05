@@ -94,6 +94,33 @@ export type Value<ES extends ExprRef | SignalRef = ExprRef | SignalRef> =
   | Text
   | ES;
 
+export type LabelAnchor =
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom'
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'middle';
+
+export type LabelPosition = {
+  offset: number;
+  anchor: LabelAnchor;
+};
+
+export type LabelDefMixins = {
+  position?: LabelPosition[];
+  avoid?: string[] | 'all' | 'layer' | 'mark';
+
+  // TODO: add support for method and lineAnchor when support labeling area and group line
+  // method?: 'floodfill' | 'reduced-search' | 'naive';
+  // lineAnchor?: 'begin' | 'end';
+};
+
+export type LabelDef<F extends Field, T extends Type = any> = (FieldDef<F, T> | SignalRef) & LabelDefMixins;
+
 /**
  * Definition object for a constant value (primitive value or gradient definition) of an encoding channel.
  */
