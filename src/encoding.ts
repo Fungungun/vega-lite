@@ -59,6 +59,7 @@ import {
   isFieldDef,
   isTypedFieldDef,
   isValueDef,
+  LabelDef,
   LatLongDef,
   NumericArrayMarkPropDef,
   NumericMarkPropDef,
@@ -272,6 +273,8 @@ export interface Encoding<F extends Field> {
    * Text of the `text` mark.
    */
   text?: TextDef<F>;
+
+  label?: LabelDef<F>;
 
   /**
    * The tooltip text to show upon mouse hover. Specifying `tooltip` encoding overrides [the `tooltip` property in the mark definition](https://vega.github.io/vega-lite/docs/mark.html#mark-def).

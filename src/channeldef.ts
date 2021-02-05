@@ -119,8 +119,6 @@ export type LabelDefMixins = {
   // lineAnchor?: 'begin' | 'end';
 };
 
-export type LabelDef<F extends Field, T extends Type = any> = (FieldDef<F, T> | SignalRef) & LabelDefMixins;
-
 /**
  * Definition object for a constant value (primitive value or gradient definition) of an encoding channel.
  */
@@ -221,6 +219,8 @@ export type TextDef<F extends Field> =
   | FieldOrDatumDefWithCondition<StringFieldDef<F>, Text>
   | FieldOrDatumDefWithCondition<StringDatumDef<F>, Text>
   | ValueDefWithCondition<StringFieldDef<F>, Text>;
+
+export type LabelDef<F extends Field> = TextDef<F> & LabelDefMixins;
 
 /**
  * A ValueDef with optional Condition<ValueDef | FieldDef>

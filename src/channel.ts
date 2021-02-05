@@ -58,6 +58,7 @@ export const STROKEDASH = 'strokeDash' as const;
 
 // Non-scale channel
 export const TEXT = 'text' as const;
+export const LABEL = 'label' as const;
 export const ORDER = 'order' as const;
 export const DETAIL = 'detail' as const;
 export const KEY = 'key' as const;
@@ -143,6 +144,7 @@ const UNIT_CHANNEL_INDEX: Flag<Channel> = {
   // channels without scales
   order: 1,
   text: 1,
+  label: 1,
   detail: 1,
   key: 1,
   tooltip: 1,
@@ -389,6 +391,7 @@ const {
   // text and tooltip have format instead of scale,
   // href has neither format, nor scale
   text: _t,
+  label: _l,
   tooltip: _tt,
   href: _hr,
   url: _u,
@@ -553,6 +556,9 @@ function getSupportedMark(channel: ExtendedChannel): SupportedMark {
       return {point: 'always', geoshape: 'always'};
     case TEXT:
       return {text: 'always'};
+    case LABEL:
+      // TODO: add support to other marks
+      return {point: 'always'};
     case ANGLE:
       return {point: 'always', square: 'always', text: 'always'};
     case URL:
@@ -592,8 +598,9 @@ export function rangeType(channel: ExtendedChannel): RangeType {
     case COLUMN:
     case SHAPE:
     case STROKEDASH:
-    // TEXT, TOOLTIP, URL, and HREF have no scale but have discrete output [falls through]
+    // TEXT, LABEL, TOOLTIP, URL, and HREF have no scale but have discrete output [falls through]
     case TEXT:
+    case LABEL:
     case TOOLTIP:
     case HREF:
     case URL:
