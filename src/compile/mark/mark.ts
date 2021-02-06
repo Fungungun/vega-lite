@@ -304,6 +304,10 @@ export function getSort(model: UnitModel): VgCompare {
 }
 
 function getMarkGroup(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix: ''}) {
+  return [...getMarkGroupOnly(model, opt), ...(model.encoding.label ? getLabel(model) : [])];
+}
+
+function getMarkGroupOnly(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix: ''}) {
   const {mark, markDef, encoding, config} = model;
 
   const clip = getFirstDefined(markDef.clip, scaleClip(model), projectionClip(model));
@@ -340,14 +344,35 @@ function getMarkGroup(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix:
   ];
 }
 
-function getLable(model: UnitModel) {
-  return {
-    name: model.getName('mark_label'),
-    type: markCompiler.text.vgMark,
-    from: {data: model.getName('mark')},
-    encode: {},
-    transform: []
-  };
+function getLabel(model: UnitModel) {
+  const {label} = model.encoding;
+  const {position, avoid, mark, ...textEncoding} = label;
+
+  const textModel = new UnitModel(
+    {
+      mark: {type: 'text', ...(mark ?? {})},
+      encoding: {text: textEncoding}
+    },
+    null,
+    '',
+    undefined,
+    {}
+  );
+  return [
+    {
+      ...getMarkGroupOnly(textModel)[0],
+      from: {data: model.getName('marks')},
+      transform: [
+        {
+          type: 'label',
+          // TODO: how to link the names from avoid to the compiled mark names
+          anchor: position.map(p => p.anchor),
+          offset: position.map(p => p.offset),
+          size: {signal: '[width, height]'}
+        }
+      ]
+    }
+  ];
 }
 
 /**

@@ -40,7 +40,8 @@ import {
   X2,
   Y,
   Y2,
-  Channel
+  Channel,
+  LABEL
 } from './channel';
 import {
   binRequiresRange,
@@ -656,8 +657,9 @@ export function pathGroupingFields(mark: Mark, encoding: Encoding<string>): stri
       case LONGITUDE2:
       // TODO: case 'cursor':
 
-      // text, shape, shouldn't be a part of line/trail/area [falls through]
+      // text, label, shape, shouldn't be a part of line/trail/area [falls through]
       case TEXT:
+      case LABEL: // TODO: line/trail/area should support labeling later
       case SHAPE:
       case ANGLE:
       // falls through

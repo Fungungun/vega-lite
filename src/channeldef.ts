@@ -19,6 +19,7 @@ import {
   isSecondaryRangeChannel,
   isXorY,
   KEY,
+  LABEL,
   LATITUDE,
   LATITUDE2,
   LONGITUDE,
@@ -113,6 +114,7 @@ export type LabelPosition = {
 export type LabelDefMixins = {
   position?: LabelPosition[];
   avoid?: string[] | 'all' | 'layer' | 'mark';
+  mark?: Omit<MarkDef<'text'>, 'mark'>;
 
   // TODO: add support for method and lineAnchor when support labeling area and group line
   // method?: 'floodfill' | 'reduced-search' | 'naive';
@@ -1242,6 +1244,7 @@ export function channelCompatibility(
     case FILL:
     case STROKE:
     case TEXT:
+    case LABEL:
     case DETAIL:
     case KEY:
     case TOOLTIP:
