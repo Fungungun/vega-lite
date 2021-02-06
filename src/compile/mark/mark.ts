@@ -1,3 +1,4 @@
+import {LabelTransform} from 'vega';
 import {isArray} from 'vega-util';
 import {FieldRefOption, isFieldDef, isValueDef, vgField} from '../../channeldef';
 import {DataSourceType} from '../../data';
@@ -358,19 +359,20 @@ function getLabel(model: UnitModel) {
     undefined,
     {}
   );
+
+  const labelTransform: LabelTransform = {
+    type: 'label',
+    // TODO: how to link the names from avoid to the compiled mark names
+    anchor: position.map(p => p.anchor),
+    offset: position.map(p => p.offset),
+    size: {signal: '[width, height]'}
+  };
+
   return [
     {
       ...getMarkGroupOnly(textModel)[0],
       from: {data: model.getName('marks')},
-      transform: [
-        {
-          type: 'label',
-          // TODO: how to link the names from avoid to the compiled mark names
-          anchor: position.map(p => p.anchor),
-          offset: position.map(p => p.offset),
-          size: {signal: '[width, height]'}
-        }
-      ]
+      transform: [labelTransform]
     }
   ];
 }
