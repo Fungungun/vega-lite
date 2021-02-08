@@ -12158,7 +12158,7 @@
                   "type": "array"
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "field": {
               "$ref": "#/definitions/Field",
@@ -12995,11 +12995,6 @@
                   ],
                   "description": "The tooltip text string to show upon mouse hover or an object defining which fields should the tooltip be derived from.\n\n- If `tooltip` is `true` or `{\"content\": \"encoding\"}`, then all fields from `encoding` will be used. - If `tooltip` is `{\"content\": \"data\"}`, then all fields that appear in the highlighted data point will be used. - If set to `null` or `false`, then no tooltip will be used.\n\nSee the [`tooltip`](https://vega.github.io/vega-lite/docs/tooltip.html) documentation for a detailed discussion about tooltip  in Vega-Lite.\n\n__Default value:__ `null`"
                 },
-                "type": {
-                  "const": "text",
-                  "description": "The mark type. This could a primitive mark type (one of `\"bar\"`, `\"circle\"`, `\"square\"`, `\"tick\"`, `\"line\"`, `\"area\"`, `\"point\"`, `\"geoshape\"`, `\"rule\"`, and `\"text\"`) or a composite mark type (`\"boxplot\"`, `\"errorband\"`, `\"errorbar\"`).",
-                  "type": "string"
-                },
                 "url": {
                   "anyOf": [
                     {
@@ -13127,9 +13122,6 @@
                   "description": "Offset for y-position."
                 }
               },
-              "required": [
-                "type"
-              ],
               "type": "object"
             },
             "position": {
@@ -13210,7 +13202,7 @@
                   "type": "array"
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "datum": {
               "anyOf": [
@@ -14060,11 +14052,6 @@
                   ],
                   "description": "The tooltip text string to show upon mouse hover or an object defining which fields should the tooltip be derived from.\n\n- If `tooltip` is `true` or `{\"content\": \"encoding\"}`, then all fields from `encoding` will be used. - If `tooltip` is `{\"content\": \"data\"}`, then all fields that appear in the highlighted data point will be used. - If set to `null` or `false`, then no tooltip will be used.\n\nSee the [`tooltip`](https://vega.github.io/vega-lite/docs/tooltip.html) documentation for a detailed discussion about tooltip  in Vega-Lite.\n\n__Default value:__ `null`"
                 },
-                "type": {
-                  "const": "text",
-                  "description": "The mark type. This could a primitive mark type (one of `\"bar\"`, `\"circle\"`, `\"square\"`, `\"tick\"`, `\"line\"`, `\"area\"`, `\"point\"`, `\"geoshape\"`, `\"rule\"`, and `\"text\"`) or a composite mark type (`\"boxplot\"`, `\"errorband\"`, `\"errorbar\"`).",
-                  "type": "string"
-                },
                 "url": {
                   "anyOf": [
                     {
@@ -14192,9 +14179,6 @@
                   "description": "Offset for y-position."
                 }
               },
-              "required": [
-                "type"
-              ],
               "type": "object"
             },
             "position": {
@@ -14250,7 +14234,7 @@
                   "type": "array"
                 }
               ],
-              "description": "A field definition or one or more value definition(s) with a selection predicate."
+              "description": "A field definition or one or more value definition(s) with a parameter predicate."
             },
             "mark": {
               "additionalProperties": false,
@@ -15068,11 +15052,6 @@
                   ],
                   "description": "The tooltip text string to show upon mouse hover or an object defining which fields should the tooltip be derived from.\n\n- If `tooltip` is `true` or `{\"content\": \"encoding\"}`, then all fields from `encoding` will be used. - If `tooltip` is `{\"content\": \"data\"}`, then all fields that appear in the highlighted data point will be used. - If set to `null` or `false`, then no tooltip will be used.\n\nSee the [`tooltip`](https://vega.github.io/vega-lite/docs/tooltip.html) documentation for a detailed discussion about tooltip  in Vega-Lite.\n\n__Default value:__ `null`"
                 },
-                "type": {
-                  "const": "text",
-                  "description": "The mark type. This could a primitive mark type (one of `\"bar\"`, `\"circle\"`, `\"square\"`, `\"tick\"`, `\"line\"`, `\"area\"`, `\"point\"`, `\"geoshape\"`, `\"rule\"`, and `\"text\"`) or a composite mark type (`\"boxplot\"`, `\"errorband\"`, `\"errorbar\"`).",
-                  "type": "string"
-                },
                 "url": {
                   "anyOf": [
                     {
@@ -15200,9 +15179,6 @@
                   "description": "Offset for y-position."
                 }
               },
-              "required": [
-                "type"
-              ],
               "type": "object"
             },
             "position": {
@@ -25085,7 +25061,7 @@
                       "type": "array"
                     }
                   ],
-                  "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+                  "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
                 },
                 {
                   "anyOf": [
@@ -25102,10 +25078,10 @@
                       "type": "array"
                     }
                   ],
-                  "description": "A field definition or one or more value definition(s) with a selection predicate."
+                  "description": "A field definition or one or more value definition(s) with a parameter predicate."
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "datum": {
               "anyOf": [
@@ -25244,7 +25220,7 @@
                       "type": "array"
                     }
                   ],
-                  "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+                  "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
                 },
                 {
                   "anyOf": [
@@ -25261,10 +25237,10 @@
                       "type": "array"
                     }
                   ],
-                  "description": "A field definition or one or more value definition(s) with a selection predicate."
+                  "description": "A field definition or one or more value definition(s) with a parameter predicate."
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "datum": {
               "anyOf": [
@@ -25413,7 +25389,7 @@
                       "type": "array"
                     }
                   ],
-                  "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+                  "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
                 },
                 {
                   "anyOf": [
@@ -25430,10 +25406,10 @@
                       "type": "array"
                     }
                   ],
-                  "description": "A field definition or one or more value definition(s) with a selection predicate."
+                  "description": "A field definition or one or more value definition(s) with a parameter predicate."
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "field": {
               "$ref": "#/definitions/Field",
@@ -25552,7 +25528,7 @@
                       "type": "array"
                     }
                   ],
-                  "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+                  "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
                 },
                 {
                   "anyOf": [
@@ -25569,10 +25545,10 @@
                       "type": "array"
                     }
                   ],
-                  "description": "A field definition or one or more value definition(s) with a selection predicate."
+                  "description": "A field definition or one or more value definition(s) with a parameter predicate."
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "datum": {
               "anyOf": [
@@ -25717,7 +25693,7 @@
                       "type": "array"
                     }
                   ],
-                  "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+                  "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
                 },
                 {
                   "anyOf": [
@@ -25734,10 +25710,10 @@
                       "type": "array"
                     }
                   ],
-                  "description": "A field definition or one or more value definition(s) with a selection predicate."
+                  "description": "A field definition or one or more value definition(s) with a parameter predicate."
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "datum": {
               "anyOf": [
@@ -25880,7 +25856,7 @@
                       "type": "array"
                     }
                   ],
-                  "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+                  "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
                 },
                 {
                   "anyOf": [
@@ -25897,10 +25873,10 @@
                       "type": "array"
                     }
                   ],
-                  "description": "A field definition or one or more value definition(s) with a selection predicate."
+                  "description": "A field definition or one or more value definition(s) with a parameter predicate."
                 }
               ],
-              "description": "One or more value definition(s) with [a selection or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
+              "description": "One or more value definition(s) with [a parameter or a test predicate](https://vega.github.io/vega-lite/docs/condition.html).\n\n__Note:__ A field definition's `condition` property can only contain [conditional value definitions](https://vega.github.io/vega-lite/docs/condition.html#value) since Vega-Lite only allows at most one encoded field per encoding channel."
             },
             "field": {
               "$ref": "#/definitions/Field",
@@ -26969,11 +26945,6 @@
                   ],
                   "description": "The tooltip text string to show upon mouse hover or an object defining which fields should the tooltip be derived from.\n\n- If `tooltip` is `true` or `{\"content\": \"encoding\"}`, then all fields from `encoding` will be used. - If `tooltip` is `{\"content\": \"data\"}`, then all fields that appear in the highlighted data point will be used. - If set to `null` or `false`, then no tooltip will be used.\n\nSee the [`tooltip`](https://vega.github.io/vega-lite/docs/tooltip.html) documentation for a detailed discussion about tooltip  in Vega-Lite.\n\n__Default value:__ `null`"
                 },
-                "type": {
-                  "const": "text",
-                  "description": "The mark type. This could a primitive mark type (one of `\"bar\"`, `\"circle\"`, `\"square\"`, `\"tick\"`, `\"line\"`, `\"area\"`, `\"point\"`, `\"geoshape\"`, `\"rule\"`, and `\"text\"`) or a composite mark type (`\"boxplot\"`, `\"errorband\"`, `\"errorbar\"`).",
-                  "type": "string"
-                },
                 "url": {
                   "anyOf": [
                     {
@@ -27101,9 +27072,6 @@
                   "description": "Offset for y-position."
                 }
               },
-              "required": [
-                "type"
-              ],
               "type": "object"
             },
             "position": {
@@ -30101,246 +30069,6 @@
         "key",
         "text",
         "label",
-        "href",
-        "url",
-        "description"
-      ],
-      "type": "string"
-    },
-    "SingleSelection": {
-      "additionalProperties": false,
-      "properties": {
-        "bind": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Binding"
-            },
-            {
-              "additionalProperties": {
-                "$ref": "#/definitions/Binding"
-              },
-              "type": "object"
-            },
-            {
-              "$ref": "#/definitions/LegendBinding"
-            }
-          ],
-          "description": "When set, a selection is populated by input elements (also known as dynamic query widgets) or by interacting with the corresponding legend. Direct manipulation interaction is disabled by default; to re-enable it, set the selection's [`on`](https://vega.github.io/vega-lite/docs/selection.html#common-selection-properties) property.\n\nLegend bindings are restricted to selections that only specify a single field or encoding.\n\nQuery widget binding takes the form of Vega's [input element binding definition](https://vega.github.io/vega/docs/signals/#bind) or can be a mapping between projected field/encodings and binding definitions.\n\n__See also:__ [`bind`](https://vega.github.io/vega-lite/docs/bind.html) documentation."
-        },
-        "clear": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Stream"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "boolean"
-            }
-          ],
-          "description": "Clears the selection, emptying it of all values. Can be a [Event Stream](https://vega.github.io/vega/docs/event-streams/) or `false` to disable.\n\n__Default value:__ `dblclick`.\n\n__See also:__ [`clear`](https://vega.github.io/vega-lite/docs/clear.html) documentation."
-        },
-        "empty": {
-          "description": "By default, `all` data values are considered to lie within an empty selection. When set to `none`, empty selections contain no data values.",
-          "enum": [
-            "all",
-            "none"
-          ],
-          "type": "string"
-        },
-        "encodings": {
-          "description": "An array of encoding channels. The corresponding data field values must match for a data tuple to fall within the selection.\n\n__See also:__ [`encodings`](https://vega.github.io/vega-lite/docs/project.html) documentation.",
-          "items": {
-            "$ref": "#/definitions/SingleDefUnitChannel"
-          },
-          "type": "array"
-        },
-        "fields": {
-          "description": "An array of field names whose values must match for a data tuple to fall within the selection.\n\n__See also:__ [`fields`](https://vega.github.io/vega-lite/docs/project.html) documentation.",
-          "items": {
-            "$ref": "#/definitions/FieldName"
-          },
-          "type": "array"
-        },
-        "init": {
-          "$ref": "#/definitions/SelectionInitMapping",
-          "description": "Initialize the selection with a mapping between [projected channels or field names](https://vega.github.io/vega-lite/docs/project.html) and initial values.\n\n__See also:__ [`init`](https://vega.github.io/vega-lite/docs/init.html) documentation."
-        },
-        "nearest": {
-          "description": "When true, an invisible voronoi diagram is computed to accelerate discrete selection. The data value _nearest_ the mouse cursor is added to the selection.\n\n__See also:__ [`nearest`](https://vega.github.io/vega-lite/docs/nearest.html) documentation.",
-          "type": "boolean"
-        },
-        "on": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Stream"
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "description": "A [Vega event stream](https://vega.github.io/vega/docs/event-streams/) (object or selector) that triggers the selection. For interval selections, the event stream must specify a [start and end](https://vega.github.io/vega/docs/event-streams/#between-filters)."
-        },
-        "resolve": {
-          "$ref": "#/definitions/SelectionResolution",
-          "description": "With layered and multi-view displays, a strategy that determines how selections' data queries are resolved when applied in a filter transform, conditional encoding rule, or scale domain.\n\n__See also:__ [`resolve`](https://vega.github.io/vega-lite/docs/selection-resolve.html) documentation."
-        },
-        "type": {
-          "const": "single",
-          "description": "Determines the default event processing and data query for the selection. Vega-Lite currently supports three selection types:\n\n- `\"single\"` -- to select a single discrete data value on `click`. - `\"multi\"` -- to select multiple discrete data value; the first value is selected on `click` and additional values toggled on shift-`click`. - `\"interval\"` -- to select a continuous range of data values on `drag`.",
-          "type": "string"
-        }
-      },
-      "required": [
-        "type"
-      ],
-      "type": "object"
-    },
-    "SingleSelectionConfig": {
-      "additionalProperties": false,
-      "properties": {
-        "bind": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Binding"
-            },
-            {
-              "additionalProperties": {
-                "$ref": "#/definitions/Binding"
-              },
-              "type": "object"
-            },
-            {
-              "$ref": "#/definitions/LegendBinding"
-            }
-          ],
-          "description": "When set, a selection is populated by input elements (also known as dynamic query widgets) or by interacting with the corresponding legend. Direct manipulation interaction is disabled by default; to re-enable it, set the selection's [`on`](https://vega.github.io/vega-lite/docs/selection.html#common-selection-properties) property.\n\nLegend bindings are restricted to selections that only specify a single field or encoding.\n\nQuery widget binding takes the form of Vega's [input element binding definition](https://vega.github.io/vega/docs/signals/#bind) or can be a mapping between projected field/encodings and binding definitions.\n\n__See also:__ [`bind`](https://vega.github.io/vega-lite/docs/bind.html) documentation."
-        },
-        "clear": {
-          "anyOf": [
-            {
-              "$ref": "#/definitions/Stream"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "boolean"
-            }
-          ],
-          "description": "Clears the selection, emptying it of all values. Can be a [Event Stream](https://vega.github.io/vega/docs/event-streams/) or `false` to disable.\n\n__Default value:__ `dblclick`.\n\n__See also:__ [`clear`](https://vega.github.io/vega-lite/docs/clear.html) documentation."
-        },
-        "empty": {
-          "description": "By default, `all` data values are considered to lie within an empty selection. When set to `none`, empty selections contain no data values.",
-          "enum": [
-            "all",
-            "none"
-          ],
-          "type": "string"
-        },
-        "encodings": {
-          "description": "An array of encoding channels. The corresponding data field values must match for a data tuple to fall within the selection.\n\n__See also:__ [`encodings`](https://vega.github.io/vega-lite/docs/project.html) documentation.",
-          "items": {
-            "$ref": "#/definitions/SingleDefUnitChannel"
-          },
-          "type": "array"
-        },
-        "fields": {
-          "description": "An array of field names whose values must match for a data tuple to fall within the selection.\n\n__See also:__ [`fields`](https://vega.github.io/vega-lite/docs/project.html) documentation.",
-          "items": {
-            "$ref": "#/definitions/FieldName"
-          },
-          "type": "array"
-        },
-        "init": {
-          "$ref": "#/definitions/SelectionInitMapping",
-          "description": "Initialize the selection with a mapping between [projected channels or field names](https://vega.github.io/vega-lite/docs/project.html) and initial values.\n\n__See also:__ [`init`](https://vega.github.io/vega-lite/docs/init.html) documentation."
-        },
-        "nearest": {
-          "description": "When true, an invisible voronoi diagram is computed to accelerate discrete selection. The data value _nearest_ the mouse cursor is added to the selection.\n\n__See also:__ [`nearest`](https://vega.github.io/vega-lite/docs/nearest.html) documentation.",
-          "type": "boolean"
-        },
-        "yError2": {
-          "additionalProperties": false,
-          "properties": {
-            "aggregate": {
-              "$ref": "#/definitions/Aggregate",
-              "description": "Aggregation function for the field (e.g., `\"mean\"`, `\"sum\"`, `\"median\"`, `\"min\"`, `\"max\"`, `\"count\"`).\n\n__Default value:__ `undefined` (None)\n\n__See also:__ [`aggregate`](https://vega.github.io/vega-lite/docs/aggregate.html) documentation."
-            },
-            "band": {
-              "description": "For rect-based marks (`rect`, `bar`, and `image`), mark size relative to bandwidth of [band scales](https://vega.github.io/vega-lite/docs/scale.html#band), bins or time units. If set to `1`, the mark size is set to the bandwidth, the bin interval, or the time unit interval. If set to `0.5`, the mark size is half of the bandwidth or the time unit interval.\n\nFor other marks, relative position on a band of a stacked, binned, time unit or band scale. If set to `0`, the marks will be positioned at the beginning of the band. If set to `0.5`, the marks will be positioned in the middle of the band.",
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            "bin": {
-              "description": "A flag for binning a `quantitative` field, [an object defining binning parameters](https://vega.github.io/vega-lite/docs/bin.html#params), or indicating that the data for `x` or `y` channel are binned before they are imported into Vega-Lite (`\"binned\"`).\n\n- If `true`, default [binning parameters](https://vega.github.io/vega-lite/docs/bin.html) will be applied.\n\n- If `\"binned\"`, this indicates that the data for the `x` (or `y`) channel are already binned. You can map the bin-start field to `x` (or `y`) and the bin-end field to `x2` (or `y2`). The scale and axis will be formatted similar to binning in Vega-Lite.  To adjust the axis ticks based on the bin step, you can also set the axis's [`tickMinStep`](https://vega.github.io/vega-lite/docs/axis.html#ticks) property.\n\n__Default value:__ `false`\n\n__See also:__ [`bin`](https://vega.github.io/vega-lite/docs/bin.html) documentation.",
-              "type": "null"
-            },
-            "field": {
-              "$ref": "#/definitions/Field",
-              "description": "__Required.__ A string defining the name of the field from which to pull a data value or an object defining iterated values from the [`repeat`](https://vega.github.io/vega-lite/docs/repeat.html) operator.\n\n__See also:__ [`field`](https://vega.github.io/vega-lite/docs/field.html) documentation.\n\n__Notes:__ 1)  Dots (`.`) and brackets (`[` and `]`) can be used to access nested objects (e.g., `\"field\": \"foo.bar\"` and `\"field\": \"foo['bar']\"`). If field names contain dots or brackets but are not nested, you can use `\\\\` to escape dots and brackets (e.g., `\"a\\\\.b\"` and `\"a\\\\[0\\\\]\"`). See more details about escaping in the [field documentation](https://vega.github.io/vega-lite/docs/field.html). 2) `field` is not required if `aggregate` is `count`."
-            },
-            "timeUnit": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/TimeUnit"
-                },
-                {
-                  "$ref": "#/definitions/TimeUnitParams"
-                }
-              ],
-              "description": "Time unit (e.g., `year`, `yearmonth`, `month`, `hours`) for a temporal field. or [a temporal field that gets casted as ordinal](https://vega.github.io/vega-lite/docs/type.html#cast).\n\n__Default value:__ `undefined` (None)\n\n__See also:__ [`timeUnit`](https://vega.github.io/vega-lite/docs/timeunit.html) documentation."
-            },
-            "title": {
-              "anyOf": [
-                {
-                  "$ref": "#/definitions/Text"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "description": "A title for the field. If `null`, the title will be removed.\n\n__Default value:__  derived from the field's name and transformation function (`aggregate`, `bin` and `timeUnit`). If the field has an aggregate function, the function is displayed as part of the title (e.g., `\"Sum of Profit\"`). If the field is binned or has a time unit applied, the applied function is shown in parentheses (e.g., `\"Profit (binned)\"`, `\"Transaction Date (year-month)\"`). Otherwise, the title is simply the field name.\n\n__Notes__:\n\n1) You can customize the default field title format by providing the [`fieldTitle`](https://vega.github.io/vega-lite/docs/config.html#top-level-config) property in the [config](https://vega.github.io/vega-lite/docs/config.html) or [`fieldTitle` function via the `compile` function's options](https://vega.github.io/vega-lite/docs/compile.html#field-title).\n\n2) If both field definition's `title` and axis, header, or legend `title` are defined, axis/header/legend title will be used."
-            },
-            "value": {
-              "description": "A constant value in visual domain (e.g., `\"red\"` / `\"#0099ff\"` / [gradient definition](https://vega.github.io/vega-lite/docs/types.html#gradient) for color, values between `0` to `1` for opacity).",
-              "type": "number"
-            }
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
-    "SingleDefUnitChannel": {
-      "enum": [
-        "x",
-        "y",
-        "x2",
-        "y2",
-        "longitude",
-        "latitude",
-        "longitude2",
-        "latitude2",
-        "theta",
-        "theta2",
-        "radius",
-        "radius2",
-        "color",
-        "fill",
-        "stroke",
-        "opacity",
-        "fillOpacity",
-        "strokeOpacity",
-        "strokeWidth",
-        "strokeDash",
-        "size",
-        "angle",
-        "shape",
-        "key",
-        "text",
         "href",
         "url",
         "description"
