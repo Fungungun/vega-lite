@@ -21,6 +21,7 @@ import {rect} from './rect';
 import {rule} from './rule';
 import {text} from './text';
 import {tick} from './tick';
+import {baseEncodeEntry as encodeBaseEncodeEntry, text as encodeText, nonPosition as encodeNonPosition} from './encode';
 
 const markCompiler: Record<Mark, MarkCompiler> = {
   arc,
@@ -55,7 +56,7 @@ export function parseMarkGroups(model: UnitModel): any[] {
     }
   }
 
-  return getMarkGroup(model);
+  return getMarkGroupWithLabel(model);
 }
 
 const FACETED_PATH_PREFIX = 'faceted_path_';
@@ -304,11 +305,11 @@ export function getSort(model: UnitModel): VgCompare {
   return undefined;
 }
 
-function getMarkGroup(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix: ''}) {
-  return [...getMarkGroupOnly(model, opt), ...(model.encoding.label ? getLabel(model) : [])];
+function getMarkGroupWithLabel(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix: ''}) {
+  return [...getMarkGroup(model, opt), ...(model.encoding.label ? getLabel(model) : [])];
 }
 
-function getMarkGroupOnly(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix: ''}) {
+function getMarkGroup(model: UnitModel, opt: {fromPrefix: string} = {fromPrefix: ''}) {
   const {mark, markDef, encoding, config} = model;
 
   const clip = getFirstDefined(markDef.clip, scaleClip(model), projectionClip(model));
@@ -351,27 +352,73 @@ function getLabel(model: UnitModel) {
 
   const textModel = new UnitModel(
     {
+      data: null,
       mark: {type: 'text', ...(mark ?? {})},
       encoding: {text: textEncoding}
     },
     null,
     '',
     undefined,
-    {}
+    model.config
   );
+  textModel.parse();
+
+  const {markDef, encoding, config} = textModel;
+  const clip = getFirstDefined(markDef.clip, scaleClip(model), projectionClip(model));
+  const style = getStyles(markDef);
+  const key = encoding.key;
+  const sort = getSort(model);
+  const interactive = interactiveFlag(model);
+  const aria = getMarkPropOrConfig('aria', markDef, config);
 
   const labelTransform: LabelTransform = {
     type: 'label',
-    // TODO: how to link the names from avoid to the compiled mark names
-    anchor: position.map(p => p.anchor),
-    offset: position.map(p => p.offset),
-    size: {signal: '[width, height]'}
+    size: {signal: '[width, height]'},
+    ...(position
+      ? {
+          anchor: position.map(p => p.anchor),
+          offset: position.map(p => p.offset)
+        }
+      : {})
+    // TODO: avoidMarks: link the names from avoid to the compiled mark names
+    // TODO: avoidBaseMark
+    // TODO: lineAnchor
+    // TODO: markIndex
+    // TODO: method
+    // TODO: padding
+    // TODO: sort
   };
 
   return [
     {
-      ...getMarkGroupOnly(textModel)[0],
+      name: model.getName('marks_label'),
+      type: markCompiler.text.vgMark,
+      ...(clip ? {clip: true} : {}),
+      ...(style ? {style} : {}),
+      ...(key ? {key: key.field} : {}),
+      ...(sort ? {sort} : {}),
+      ...(interactive ? interactive : {}),
+      ...(aria === false ? {aria} : {}),
       from: {data: model.getName('marks')},
+      encode: {
+        update: {
+          ...omit(
+            encodeBaseEncodeEntry(textModel, {
+              align: 'ignore',
+              baseline: 'ignore',
+              color: 'include',
+              size: 'ignore',
+              orient: 'ignore',
+              theta: 'ignore'
+            }),
+            ['x', 'y', 'angle', 'radius', 'theta']
+          ),
+          ...encodeText(textModel, 'text', 'datum.datum'),
+          ...encodeNonPosition('size', textModel, {
+            vgChannel: 'fontSize' // VL's text size is fontSize
+          })
+        }
+      },
       transform: [labelTransform]
     }
   ];

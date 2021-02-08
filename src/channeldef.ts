@@ -95,32 +95,6 @@ export type Value<ES extends ExprRef | SignalRef = ExprRef | SignalRef> =
   | Text
   | ES;
 
-export type LabelAnchor =
-  | 'left'
-  | 'right'
-  | 'top'
-  | 'bottom'
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'middle';
-
-export type LabelPosition = {
-  offset: number;
-  anchor: LabelAnchor;
-};
-
-export type LabelDefMixins = {
-  position?: LabelPosition[];
-  avoid?: string[] | 'all' | 'layer' | 'mark';
-  mark?: Omit<MarkDef<'text'>, 'mark'>;
-
-  // TODO: add support for method and lineAnchor when support labeling area and group line
-  // method?: 'floodfill' | 'reduced-search' | 'naive';
-  // lineAnchor?: 'begin' | 'end';
-};
-
 /**
  * Definition object for a constant value (primitive value or gradient definition) of an encoding channel.
  */
@@ -221,6 +195,32 @@ export type TextDef<F extends Field> =
   | FieldOrDatumDefWithCondition<StringFieldDef<F>, Text>
   | FieldOrDatumDefWithCondition<StringDatumDef<F>, Text>
   | ValueDefWithCondition<StringFieldDef<F>, Text>;
+
+export type LabelAnchor =
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom'
+  | 'top-left'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'middle';
+
+export type LabelPosition = {
+  offset: number;
+  anchor: LabelAnchor;
+};
+
+export type LabelDefMixins = {
+  position?: LabelPosition[];
+  avoid?: string[] | 'all' | 'layer' | 'mark';
+  mark?: Omit<MarkDef<'text'>, 'type'>;
+
+  // TODO: add support for method and lineAnchor when support labeling area and group line
+  // method?: 'floodfill' | 'reduced-search' | 'naive';
+  // lineAnchor?: 'begin' | 'end';
+};
 
 export type LabelDef<F extends Field> = TextDef<F> & LabelDefMixins;
 
